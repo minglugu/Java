@@ -8,6 +8,17 @@ public class TestDemo2 {
     // 1. base condition
     // 2. call the recursive function itself
 
+    // frogs jump n steps of stairs. It can jump one step, or two steps.
+    // How many ways of jump?
+    public static int fun1(int n) {
+
+        if(n == 1 || n == 2) {
+            return n;
+        }
+
+        return fun1(n - 1) + fun1(n - 2);
+    }
+
     // n！using recursion
     public static int factorial(int n) {
         if (n == 1) {
@@ -92,5 +103,9 @@ public class TestDemo2 {
         // System.out.println(factorial(5));
         // printDigits(1234);
         // System.out.println(sumAll(1234));
+/*        System.out.println(fun1(1));
+        System.out.println(fun1(2));
+        System.out.println(fun1(3));
+        System.out.println(fun1(4));*/
     }
 }
