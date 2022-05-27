@@ -9,11 +9,11 @@ import java.util.Arrays;
 
 // Object Person
 class Person {
-    //attributes-》属性-》成员变量->类的内部 方法的外部的-》1、普通成员变量  静态成员变量
+    //attributes
     public String name;
     public int age;
 
-    //method->行为->1、普通成员方法  静态成员方法
+    //method
     public void eat() {
         /*int a;
         System.out.println(a);*/
@@ -34,14 +34,13 @@ public class TestDemo {
 
         person.eat();
         person.sleep();
-
     }
 
     public static void main10(String[] args) {
         Person person = new Person();
         person.name = "bit";
         person.age = 10;
-        //普通成员变量的访问需要通过对象的引用来访问的
+
         System.out.println(person.name);
         System.out.println(person.age);
         System.out.println("======================");
