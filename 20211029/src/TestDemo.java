@@ -3,6 +3,9 @@
  * @version 1.0
  * @since 2021-10-29
  * @description Class, object, & time complexity
+ * this.data: current object's attribute
+ * this.func(): current object's function
+ * this(): current object's constructor in the first line
  */
 class Person {
     //attributes -> object
@@ -17,11 +20,15 @@ class Person {
     // static: COUNT is in method area
     public static final int COUNT = 2;
 
+    // order: static code, instance code, constructor
     {
         this.age = 99;
         System.out.println("实例代码块！");
     }
 
+    // static code will be executed first, and only run once.
+    // It doesn't depend on object.
+    // can be used for static variable
     static {
         count = 99;
         System.out.println("静态代码块！");
