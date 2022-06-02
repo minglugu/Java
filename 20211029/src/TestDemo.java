@@ -8,8 +8,14 @@ class Person {
     //attributes -> object
     private String name;
     private int age=19;
-    //static variable -> class variable
+    //static variable -> class variable ->方法区（A.class, static int count: 静态成员变量，Person.class）
+    //Static variables can be accessed by calling with ClassName.VariableName  . It does not depend on object.
     public static int count;//0
+
+    // final: constance, can't be modified, belongs to object
+    public final int SIZE = 10;
+    // static: COUNT is in method area
+    public static final int COUNT = 2;
 
     {
         this.age = 99;
@@ -65,6 +71,7 @@ class Person {
 
     public void print() {
         //this.eat();
+        // call static method in a method
         //staticFunc();
         System.out.println("Name: "+name+" age: "+age);
     }
@@ -73,9 +80,13 @@ class Person {
     public static void staticFunc() {
         //this.age = 10;error
         //static int size = 10;error
-        //print();error
+        //print();error,need object to call print()
         /*Person person = new Person();
         person.print();*/
+        /*The double colon (::) operator, also known as method reference operator in Java,
+        is used to call a method by referring to it with the help of its class directly.
+        Syntax: <Class name>::<method name>
+        Reference URL: https://www.geeksforgeeks.org/double-colon-operator-in-java/ */
         System.out.println("static::func()");
     }
 
@@ -106,7 +117,8 @@ public class TestDemo {
     }
 
     public static void main5(String[] args) {
-        System.out.println(Person.count);
+
+        System.out.println(Person.count);// 用class name调用
     }
 
     public static void main4(String[] args) {
@@ -143,9 +155,11 @@ public class TestDemo {
 
     public static void main8(String[] args) {
         TestDemo testDemo = new TestDemo();
+
     }
 
     public static void main7(String[] args) {
+        // person object can only refer to one object, in this case, it refers to the last object
         Person person = new Person();
         person = new Person();
         person = new Person();
@@ -163,8 +177,9 @@ public class TestDemo {
     }
 
     public static void main6(String[] args) {
+        func(); // static method, direct call
         TestDemo testDemo = new TestDemo();
-        testDemo.func2();
+        testDemo.func2(); // use an object to call this method
     }
 
     public static void main5(String[] args) {
