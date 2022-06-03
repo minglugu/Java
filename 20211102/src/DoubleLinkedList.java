@@ -2,6 +2,9 @@
  * @author Minglu Gu
  * @version 1.0
  * @since 2021-11-02
+ * @description singly linkedlist, head stores the address of the first node, non-circular, tail point to null
+ *              doubly linkedlist, head stores the address of the first node, non-circular
+ *              head.next stores the address of the next node.
  */
 
 class Node {
