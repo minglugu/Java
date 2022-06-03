@@ -74,7 +74,7 @@ public class MyArrayList {
     public int getPos(int pos) {
         if(pos < 0 || pos >= this.usedSize) {
             System.out.println("pos 位置不合法");
-            return -1;//所以 这里说明一下，业务上的处理，这里不考虑  后期可以抛异常
+            return -1;//所以 这里说明一下，业务上的处理，这里不考虑. Could throw an exception
         }
         if(isEmpty()) {
             System.out.println("顺序表为空！");
@@ -94,13 +94,13 @@ public class MyArrayList {
             return;
         }
         if(isEmpty()) {
-            System.out.println("The arraylist is empty.");
+            System.out.println("The array is empty.");
             return;
         }
         this.elem[pos] = value;
     }
 
-    //delete the first found element
+    //delete the first found element, the next element will be moved to the
     public void remove(int toRemove) {
         if(isEmpty()) {
             System.out.println("Empty arraylist");
@@ -111,6 +111,7 @@ public class MyArrayList {
             System.out.println("Element does not exist.");
             return;
         }
+        // i < usedSize - 1, because remove 1 element, the size will be usedSize-1
         for (int i = index; i < this.usedSize-1; i++) {
             this.elem[i] = this.elem[i+1];
         }
@@ -120,6 +121,7 @@ public class MyArrayList {
     // empty the arraylist
     public void clear() {
         this.usedSize = 0;
+        // for reference type
         /*for (int i = 0; i < usedSize; i++) {
             this.elem[i] = null;
         }
