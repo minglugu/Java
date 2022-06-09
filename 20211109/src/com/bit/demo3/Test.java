@@ -56,6 +56,25 @@ public class Test {
     protected int value2 = 1;
 
     public static void main(String[] args) {
+        Animal animal2 = new Animal()
+    }
+
+    public static void main5(String[] args) {
+        // down casting: not recommended
+        Animal animal2 = new Bird("H ", 12, "fly");
+        if (animal2 instanceof Bird) {
+            Bird bird = (Bird) animal2;
+            bird.fly();
+        }
+        /*
+        * cast exception
+        * */
+        /*Animal animal3 = new Dog("H ", 12);
+        Bird bird2 = (Bird) animal2;
+        bird.fly();*/
+    }
+
+    public static void main4(String[] args) {
         Animal animal = new Dog("Cute", 19);
 
         Animal animal2 = new Bird("chirp", 10,"fly");
