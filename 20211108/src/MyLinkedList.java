@@ -103,7 +103,7 @@ public class MyLinkedList {
             return;
         }
         ListNode cur = searchIndex(index);
-        node.next = cur.prev.next;
+        node.next = cur.prev.next; // this is also correct: node.next = cur;
         cur.prev.next = node;
         node.prev = cur.prev;
         cur.prev = node;

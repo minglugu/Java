@@ -4,12 +4,21 @@
  * @since yyyy-mm-dd
  */
 class Test {
-    public String toString() {
+    public static void func() {
+        System.out.println("hello");
+    }
+
+/*    public String toString() {
         System.out.print("aaa");
         return "bbb";
-    }
+    }*/
 }
 public class TestDemo {
+    public static void main4(String[] args) {
+        Test test = null;
+        test.func();
+
+    }
 
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
@@ -20,6 +29,10 @@ public class TestDemo {
         myLinkedList.addLast(2);
         myLinkedList.display();
         System.out.println("=======");
+        myLinkedList.addIndex(2, 28);
+        myLinkedList.display();
+        System.out.println("=======");
+
         //myLinkedList.removeAllKey(2);
         myLinkedList.addIndex(3,99);
         myLinkedList.display();
