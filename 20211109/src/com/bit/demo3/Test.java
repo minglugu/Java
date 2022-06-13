@@ -55,11 +55,8 @@ class Bird extends Animal {
 public class Test {
     protected int value2 = 1;
 
-    public static void main(String[] args) {
-        Animal animal2 = new Animal()
-    }
 
-    public static void main5(String[] args) {
+    public static void main(String[] args) {
         // down casting: not recommended
         Animal animal2 = new Bird("H ", 12, "fly");
         if (animal2 instanceof Bird) {
