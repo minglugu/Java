@@ -24,7 +24,7 @@ public class TestDemo {
         if (str == null || str.length() == 0) {
         }
     }
-    
+
     public static void main(String[] args) {
         // string的本质是数组，是不能修改的。
         // 只能通过反射来修改String里面的值
@@ -134,10 +134,7 @@ public class TestDemo {
         // method 3. chars[] into String
         char[] chars = {'a', 'b', 'c'};
         String str3 = new String(chars); // chars[] into String
-
         System.out.println(chars); //abc
-
-
     }
 }
 
