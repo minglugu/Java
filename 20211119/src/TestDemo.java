@@ -7,9 +7,45 @@ import java.util.Locale;
  * @version 1.0
  * @since 2021-11-19
  */
+
 public class TestDemo {
 
     public static void main(String[] args) {
+        String s1 = "abc" + "def"; // string pool
+        String s2 = new String(s1); // object
+        if(s1.equals(s2)) {
+            System.out.println("run the first if statement");
+        }
+        if(s1 == s2) {
+            System.out.println("run the second if statement");
+        }
+    }
+
+    // a tricky question
+    public static boolean isAdmin(String userId) {
+        // userId.toLowerCase() 产生了一个新对象，而“admin"是在常量池里的。所以两者不相等，是false
+        return userId.toLowerCase() == "admin";
+    }
+    public static void main17(String[] args) {
+        System.out.println(isAdmin("Admin")); // false
+    }
+
+    // a tricky question
+    String str = new String("good");
+    char[] ch = {'a', 'b', 'c'};
+
+    public static void main15(String[] args) {
+        TestDemo ex = new TestDemo();
+        ex.change(ex.str, ex.ch);
+        System.out.print(ex.str + " and "); // good and
+        System.out.print(ex.ch); // gbc
+    }
+    public void change(String str, char ch[]) {
+        str = "test ok";
+        ch[0] = 'g';
+    }
+
+    public static void main14(String[] args) {
         String str = "adsjfhjd";
         String ret = str.concat("1214"); // 拼接的结果，不入池 （not in constant pool）
         System.out.println(ret);
