@@ -7,8 +7,8 @@
  * String: +, 直接赋值
  * 1. for/while/if loop: use StringBuilder and StringBuffer to return the same object
  * 2. public synchronized StringBuffer append(StringBuffer sb) // 保证thread safety
- * StringBuffer: used for multi-threads (线程安全操作)
- * StringBuilder: used for a single thread (线程不安全操作)
+ * StringBuffer: used for multi-threads (线程安全操作) 低效
+ * StringBuilder: used for a single thread (线程不安全操作) 高效
  *
  */
 public class TestDemo {
