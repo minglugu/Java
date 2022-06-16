@@ -12,6 +12,8 @@ import java.util.Scanner;
  *    可能发生的错误，放在try{} block 里面，eg 课件里面的游戏的例子
  *    catch需要加，finally可加可不加
  *    check exception and error through idk
+ *
+ *    checked exception vs unchecked exception
  */
 class Person implements Cloneable{
     public int id;
@@ -22,6 +24,26 @@ class Person implements Cloneable{
     }
 }
 public class TestDemo {
+
+    // throws in signature
+    public static int func5(int x, int y) throws RuntimeException{
+        if(y == 0) {
+            // System.out.println(10/x); 已经抛出异常了，不会执行下面一行代码
+            throw new ArithmeticException("/ by 0"); // 自定义异常
+            // 抛出自定义的异常
+            // throw new RuntimeException("x == " + 10);
+        }
+        return x / y;
+    }
+
+    public static void main(String[] args) {
+        //func5(10, 0);
+       try {
+            func5(10,0);
+        }catch (ArithmeticException e) {
+            e.printStackTrace();
+        }
+    }
     // 打印是20，所以避免在finally写return
     public static int func4() {
         int a = 10;
