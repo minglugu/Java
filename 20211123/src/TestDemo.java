@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -24,6 +26,30 @@ class Person implements Cloneable{
     }
 }
 public class TestDemo {
+    public static void main(String[] args) throws FileNotFoundException {
+        System.out.println(readFile());
+    }
+
+    public static void main12(String[] args) {
+        System.out.println();
+    }
+    public static String readFile()  {
+        // 尝试打开文件，并读其中的一行
+        File file = new File("d:/test.txt");
+        // 使用文件对象构造 Scanner 对象
+        // method 1. Add "throws FileNotFoundException" in the method signature，
+        // 相当于将处理动作交给上级调用者，如果再处理不了异常，就交给JVM处理
+        // Scanner sc = new Scanner(file);
+        // method 2. use try catch
+        Scanner sc = null;
+        try {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return sc.nextLine();
+    }
 
     // throws in signature
     public static int func5(int x, int y) throws RuntimeException{
@@ -36,7 +62,7 @@ public class TestDemo {
         return x / y;
     }
 
-    public static void main(String[] args) {
+    public static void main11(String[] args) {
         //func5(10, 0);
        try {
             func5(10,0);
