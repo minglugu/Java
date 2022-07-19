@@ -6,14 +6,13 @@ import java.util.Stack;
  * @version 1.0
  * @since 2022-01-15
  * @description 前中后缀表达式: CSDN
+ * 也可以用doubled linked list 来做stack。这样时间复杂度为O(1)
  */
 public class TestDemo {
-
-
     // https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&tqId=11174&ru=/exam/oj
     public boolean IsPopOrder(int [] pushA,int [] popA) {
         Stack<Integer> stack = new Stack<>();
-        int j = 0; // j定义到for loop外面
+        int j = 0; // j定义到for loop外面,遍历popA
         for (int i = 0; i < pushA.length; i++) {
             // for (int j = 0; j < pushA.length; j++)
             stack.push(pushA[i]);
@@ -32,6 +31,22 @@ public class TestDemo {
 */
         }
         return stack.empty();
+    }
+
+    public static void main(String[] args) {
+        // test MyStack class
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        System.out.println(stack.pop());// 4
+        System.out.println(stack.peek());// 3
+        System.out.println(stack.pop());// 3
+
+        System.out.println(stack.isEmpty()); //false
+        System.out.println("=============");
+        System.out.println(stack.isFull());// false
     }
 
     public static void main2(String[] args) {
